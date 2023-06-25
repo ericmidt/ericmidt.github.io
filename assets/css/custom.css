@@ -1,4 +1,4 @@
-.text-style {
+article.post.featured header.major h3.text-style {
     text-transform: lowercase !important;
     text-align: justify !important;
   }
