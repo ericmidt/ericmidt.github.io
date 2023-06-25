@@ -197,10 +197,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #646060);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #646060);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #646060);
-				background-image: linear-gradient(to right, #5e42a6, #646060);
+				background-image: -moz-linear-gradient(to right, #5e42a6, #262626);
+				background-image: -webkit-linear-gradient(to right, #5e42a6, #262626);
+				background-image: -ms-linear-gradient(to right, #5e42a6, #262626);
+				background-image: linear-gradient(to right, #5e42a6, #262626);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -2444,7 +2444,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #ffffff;
-			color: #646060;
+			color: #262626;
 			content: '\f00c';
 		}
 
@@ -2552,11 +2552,11 @@ input, select, textarea {
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #646060;
+					color: #262626;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #646060;
+					color: #262626;
 				}
 
 /* Image */
@@ -3256,11 +3256,11 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #646060;
+			background-color: #262626;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #646060;
+			background-color: #262626;
 		}
 
 		.wrapper.fullscreen {
@@ -3765,10 +3765,10 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #646060);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #646060);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #646060);
-				background-image: linear-gradient(to right, #5e42a6, #646060);
+				background-image: -moz-linear-gradient(to right, #5e42a6, #1219e4);
+				background-image: -webkit-linear-gradient(to right, #5e42a6, #1219e4);
+				background-image: -ms-linear-gradient(to right, #5e42a6, #1219e4);
+				background-image: linear-gradient(to right, #5e42a6, #1219e4);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3857,7 +3857,7 @@ input, select, textarea {
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #646060;
+							background-color: #262626;
 						}
 
 		}
