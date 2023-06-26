@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Optical Mark Recognition System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Eric Schmidt's Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="answersheet.html" class="active">OMR</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Optical Mark Recognition System</h1>
+							<h2>Objective</h2>
+							<p>	
+								This project implements an Optical Mark Recognition (OMR) system in Octave to correct multiple-choice answer sheets.
+                                Octave is a free software largely compatible with Matlab.
+							</p>
+                            <h2>Implementation</h2>
+							<ul>
+								<li>
+                                    The implementation begins by loading the image, converting it to black and white, and displaying it.
+                                </li>				
+                                <div style="padding-top: 20px;">
+                                    <span class="image fit"><img src="images/omr-1.png" alt="" /></span>
+                                </div>			
+                                <li>
+                                    Rectangles are then placed around each answer option on the answer sheet.
+                                    The code removes the question types (A, B, C, D) from the main matrix and stores them in a separate vector.
+                                </li>								
+                                <li>
+                                    Then, bubble sort is used to sort the question type boxes and answer boxes in the Y-axis to account for potential image rotation.
+                                    The matrix is then sorted in rows, and the questions are sorted in ascending order.
+                                    The number of black pixels in each answer option square is counted.
+                                    Similarly, the answers are sorted by row.
+                                </li>								
+                                <div style="padding-top: 20px;">
+                                    <span class="image fit"><img src="images/omr-2.png" alt="" /></span>
+                                </div>				
+                                <li>
+                                    The code checks which answer was selected based on the previously obtained values or if no answer was selected.
+                                    Any question with two or more selected answers is marked as invalid.
+                                    The marked question type is identified by the square with the highest number of black pixels.
+                                </li>								
+                                <li>
+                                    The answer key is loaded based on the identified question type.
+                                    The same procedure is applied to the answer key matrix as for the previous images.
+                                    The student's answer matrix is compared with the answer key, and the score is calculated and displayed.
+                                </li>														
+                                <div style="padding-top: 20px;">
+                                    <span class="image fit"><img src="images/omr-3.png" alt="" /></span>
+                                </div>		
+							</ul>
+                            <h2>Results and Conclusion</h2>
+							<ul>
+								<li>
+                                    The image recognition results show that all questions on the answer sheet, 
+                                    including the question type, are correctly recognized and the red rectangles 
+                                    are appropriately positioned. The command window displays the score and the 
+                                    number of questions with multiple answers, which were manually counted and 
+                                    verified to match the system's results.
+                                </li>								
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Eric Schmidt. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

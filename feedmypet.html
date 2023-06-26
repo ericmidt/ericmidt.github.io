@@ -28,47 +28,35 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+				<style>			
+					.video-container {
+					  display: flex;
+					  justify-content: center;
+					  align-items: center;
+					  padding-bottom: 40px;
+					}
+					
+				  </style>
 
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">FeedMyPet IoT Mobile App</h1>
 							<h2>Overview</h2>
+							<h3>Software</h3>
 							<p>	
 								This project encompassed a complete IoT solution, from hardware design and manufacturing 
 								to firmware and software development. Through a mobile app the user was able to create 
-								an account, set their pet's feeding schedule and see how much food and water 
+								an account, set how much food and what time it was served, and see how much food and water 
 								was left in real-time.
+								If there were more than one module in the house, the user could control all of them through the same account.
 							</p>
-							<style>
-								.video-container {
-								  display: flex;
-								  justify-content: center;
-								  align-items: center;
-								  height: 65vh; /* Adjust the height if needed */
-								  padding-bottom: 25px;
-								}
-							  </style>
-							  
-							  <div class="video-container">
-								<video width="300px" height="600px" controls="controls">
-								  <source src="images/feedmypet-vertical-video.mp4" type="video/mp4" />
+								
+							<div class="video-container">
+								<video width="320px" height="640px" controls="controls">
+								<source src="images/feedmypet-vertical-video.mp4" type="video/mp4" />
 								</video>
-							  </div>
-							<p>	
-								text 1
-							</p>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>	
-								text 2
-							</p>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>								
-							<p>	
-								text 3
-							</p>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							
-							<h2>Tecnologies used</h2>
+							</div>
 							<ul>
 								<li><strong>React Native: </strong>Developed the native mobile app 
 									using React Native, allowing cross-platform compatibility for 
@@ -106,9 +94,42 @@
 									the testing and deployment process.
 								</li>
 							</ul>
+							<h3>Hardware</h3>
+							<ul>
+								<li>
+									The next image shows the electrical scheme with all the components and trails to connect each one of them. 
+								</li>
+								<li>
+									The schematic was made using the EasyEAD software, which is a tool to develop and print PCBs. 
+								</li>
+								<li>
+									The module was tested utilizing the burn-in method, which puts the PCB under extreme operating conditions, to guarantee it would not fail and leave the pet unnatended.
+								</li>
+								<li>
+									The Raspberry Pi Zero W could be replaced by ESP32 to reduce costs.
+								</li>
+							</ul>
+							<span class="image fit"><img src="images/hw-scheme.jpeg" alt="" /></span>
+							<h3>Prototype</h3>		
+							<ul>
+								<li>
+									This picture shows the final prototype. It was made in MDF and you can check the food and water containers on top of it.
+								</li>
+								<li>
+									The water is served via a pump powered by a DC motor, which fills up the bowl. This is done by measuring if the current weight of the bowl is within minimum and maximum limits.
+								</li>
+								<li>
+									For the food, a stepper motor to dispense a predetermined amount of food. The user could choose how many servings to give the pet.
+								</li>
+								<li>
+									The recipient was projected using Autocad and it was made so the food and water 
+									bowls were kept 5cm above the floor for good ergonomics and leave enough space so the pet wouldn't hit its head.
+									The final product could be made with ABS plastic to reduce price at a large scale.
+								</li>
+							</ul>
+							<span class="image fit"><img src="images/prototype.jpeg" alt="" /></span>
 						</div>
 					</section>
-
 			</div>
 
 		<!-- Footer -->
