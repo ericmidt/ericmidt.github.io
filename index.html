@@ -99,6 +99,11 @@
 							</div>
 						</section>
 					</section>
+					<style>
+						.actions {
+						  padding-bottom: 50px; /* Adjust the padding value as needed */
+						}
+					  </style>
 
 				<!-- Two -->
 				<section id="two" class="wrapper style3 fade-up">
@@ -168,41 +173,37 @@
 					  </div>
 					</div>
 				  </section>
-				  
 				  <style>
 					.content-wrapper {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
+					  display: flex;
+					  flex-direction: row;
+					  align-items: flex-start;
 					}
 				  
 					.image {
 					  flex: 1;
+					  text-align: left; /* Align the image to the left */
 					}
 				  
 					.text {
 					  flex: 2;
 					  margin-left: 20px; /* Adjust the spacing between the image and text */
 					}
-					
-					@media only screen and (max-width: 768px) {
-						.content-wrapper {
-							flex-direction: column;
-						}
-					}
-					.image {
-						display: flex;
-						justify-content: center; /* Center horizontally */
-						align-items: center; /* Center vertically */
-					}
 				  
-					.text {
-					  flex: 1;
+					@media only screen and (max-width: 768px) {
+					  .content-wrapper {
+						flex-direction: column; /* Stack the image and text vertically on mobile */
+						align-items: center; /* Center the image and text horizontally on mobile */
+					  }
+				  
+					  .image {
+						text-align: center; /* Center the image on mobile */
+						margin-bottom: 20px; /* Add some space between the image and text on mobile */
+						margin-left: 0; /* Remove the left margin on mobile */
+					  }
 					}
-
-
-
 				  </style>
+				  
 									
 
 				<!-- Three -->
