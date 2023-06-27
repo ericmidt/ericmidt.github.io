@@ -2559,6 +2559,18 @@ input, select, textarea {
 					color: #262626;
 				}
 
+
+/* Profile image */
+
+.profile {
+	display: inline-block;
+	position: relative;
+	border-radius: 50%;
+	border-collapse: separate; 
+}
+
+
+
 /* Image */
 
 	.image {
