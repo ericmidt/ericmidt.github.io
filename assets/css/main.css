@@ -2573,64 +2573,68 @@ input, select, textarea {
 
 /* Image */
 
-	.image {
-		border-radius: 0.25em;
-		border: 5px solid #555;
-		display: inline-block;
-		position: relative;
-	}
-
-	.image:hover {
-		opacity: 0.8;
-	}
-
-		.image img {
-			border-radius: 0.25em;
-			display: block;
-		}
-
-		.image.left, .image.right {
-			max-width: 40%;
-		}
-
-			.image.left img, .image.right img {
-				width: 100%;
-			}
-
-		.image.left {
-			float: left;
-			margin: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
-
-		.image.right {
-			float: right;
-			margin: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
-
-		.image.fit {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 30px;
-			width: 70%;
-		}
-
-			.image.fit img {
-				width: 100%;
-			}
-
-		.image.main {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
-
-			.image.main img {
-				width: 100%;
-			}
-
+.image {
+	border-radius: 0.25em;
+	border: 5px solid #555;
+	display: flex;
+	position: relative;
+  }
+  
+  .image:hover {
+	opacity: 0.8;
+  }
+  
+  .image img {
+	border-radius: 0.25em;
+	display: block; /* Change 'flex' to 'block' */
+	width: 100%; /* Add this to ensure the image fills the container */
+	height: auto; /* Add this to maintain the aspect ratio */
+  }
+  
+  .image.left,
+  .image.right {
+	max-width: 40%;
+  }
+  
+  .image.left img,
+  .image.right img {
+	width: 100%;
+  }
+  
+  .image.left {
+	float: left;
+	margin: 0 1.5em 1em 0;
+	top: 0.25em;
+  }
+  
+  .image.right {
+	float: right;
+	margin: 0 0 1em 1.5em;
+	top: 0.25em;
+  }
+  
+  .image.fit {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	width: 70%;
+  }
+  
+  .image.fit img {
+	width: 100%;
+  }
+  
+  .image.main {
+	display: flex;
+	margin: 0 0 3em 0;
+	width: 100%;
+  }
+  
+  .image.main img {
+	width: 100%;
+  }
+  
 /* List */
 
 	ol {
