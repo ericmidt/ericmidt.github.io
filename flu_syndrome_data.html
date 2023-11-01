@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Influenza Syndrome Notifications ETL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Eric Schmidt's Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="flu_syndrome_data.html" class="active">Influenza Syndrome Notifications</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Influenza Syndrome Notifications</h1>
+							<h2>Overview</h2>
+							<p>	
+								This program utilizes Python to consume an API for notifications of 
+								influenza-like illness in the state of Paraná, Brazil and to insert the 
+								data into a local PostgreSQL database.
+								<a href="https://github.com/ericmidt/flu-syndrome-data">Here's the code on GitHub.</a>
+							</p>
+
+							<li>Creates table in local PostgreSQL database</li>
+							<li>Extracts data from the brazilian government's influenza notifications API</li>
+							<li>Transforms the data by removing certain columns and rows that are blank</li>
+							<li>Loads data into PostgreSQL table</li><br>
+
+							<h2>Technologies Used</h2>
+							<ul>
+								<li><strong>Python: </strong>Developed the ETL script to get useful data and load it into a local database.</li>
+								
+								<li><strong>PostgreSQL: </strong>Designed and implemented a table in a PostgreSQL to store data.</li>
+
+								<li><strong>Git: </strong>Managed version control using Git to track changes and collaborate 
+									on the codebase.</li>
+								
+								<li><strong>GitHub: </strong>Hosted the project on GitHub to facilitate code sharing, 
+									collaboration, and version history tracking.</li>
+								
+								<li><strong>JSON: </strong>The API utilizes JSON (JavaScript Object Notation) as the data  
+									format for API responses.</li>
+							</ul>
+						
+							<!-- <span class="image main">
+								<img src="images/java_api/1. add_user.png" alt="Adding a User" width="1200px" height="300px"/></span>
+							<p>
+								To add a new user to the system, the <code>/users</code> endpoint is used with a <code>POST</code> request.
+								This route receives user details, such as username, city, state, and allergies, and ensures that the username is unique
+								before saving the user profile.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/2. add_restaurant.png" alt="Adding a Restaurant" width="1200" height="300"/></span>
+							<p>
+								Adding a restaurant is achieved through the <code>/restaurants</code> endpoint with a <code>POST</code> request.
+								The route validates whether a restaurant with the same name and zip code already exists before saving the new restaurant entry.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/3. get_user.png" alt="Getting User Information" width="1200" height="300"/></span>
+							<p>
+								To retrieve user information based on a specific username, the <code>/users/by-username/{username}</code> endpoint is used.
+								This route returns user details, such as city and state, associated with the provided username.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/4. post_review.png" alt="Posting a Review" width="1200" height="300"/></span>
+							<p>
+								Posting a dining review involves sending a <code>POST</code> request to the <code>/dining-reviews</code> endpoint.
+								The route verifies the existence of the user based on the username, then saves the review details to the repository.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/5. get_pendingreviews.png" alt="Getting Pending Reviews" width="1200" height="300"/></span>
+							<p>
+								To retrieve a list of pending reviews, the <code>/admin/pending-reviews</code> endpoint is used. This route fetches
+								reviews with an "PENDING" approval status and returns them for administrative purposes.
+							</p>
+
+							<span class="image main"><img src="images/java_api/6. admin_getusers.png" alt="Admin - Getting Users" width="1200" height="300"/></span>
+							<p>
+								Administrators can access user information using the <code>/admin/users</code> endpoint. This route returns a list of
+								all registered users, allowing administrators to manage user profiles and information.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/7. get_reviews.png" alt="Getting All Reviews" width="1200" height="300"/></span>
+							<p>
+								The <code>/admin/reviews</code> endpoint is used to retrieve all dining reviews in the system. This route provides
+								administrators with an overview of all reviews, including their details and approval status.
+							</p>
+							
+							<span class="image main"><img src="images/java_api/8. accept_review.png" alt="Accepting a Review" width="1200" height="300"/></span>
+							<p>
+								Review approval or rejection is facilitated through the <code>/admin/reviews/{id}</code> endpoint with a <code>PUT</code>
+								request. Administrators can specify the approval status ("ACCEPTED" or "REJECTED") to update the review accordingly.
+							</p>
+							</div> -->
+							
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Eric Schmidt. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
