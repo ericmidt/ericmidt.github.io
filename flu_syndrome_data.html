@@ -60,57 +60,25 @@
 								<li><strong>JSON: </strong>The API utilizes JSON (JavaScript Object Notation) as the data  
 									format for API responses.</li>
 							</ul>
-						
-							<!-- <span class="image main">
-								<img src="images/java_api/1. add_user.png" alt="Adding a User" width="1200px" height="300px"/></span>
 							<p>
-								To add a new user to the system, the <code>/users</code> endpoint is used with a <code>POST</code> request.
-								This route receives user details, such as username, city, state, and allergies, and ensures that the username is unique
-								before saving the user profile.
+								The script utilizes the requests library to make authenticated requests to an Elasticsearch API endpoint 
+								containing flu syndrome-related data. The data retrieval is done in batches, with each batch covering a 
+								specific date range.
+							</p>
+							<span class="image fit"><img src="images/flu-data1.png" alt="" /></span>
+							<p>
+								The retrieved JSON data is processed to extract specific fields of interest, such as ID, 
+								timestamp, gender, age, symptoms, etc. Certain data cleaning and formatting operations 
+								are performed, ensuring compatibility with the PostgreSQL schema.
+							</p>
+							<span class="image fit"><img src="images/flu-data2.png" alt="Table in pg4admin" /></span>
+							<p>
+								The script connects to a PostgreSQL database using the provided credentials.
+								It checks if the table (Flu_syndrome_data) exists; if not, it creates the table with predefined columns.
+								The processed data is then inserted into the PostgreSQL table using parameterized queries, ensuring data integrity.
 							</p>
 							
-							<span class="image main"><img src="images/java_api/2. add_restaurant.png" alt="Adding a Restaurant" width="1200" height="300"/></span>
-							<p>
-								Adding a restaurant is achieved through the <code>/restaurants</code> endpoint with a <code>POST</code> request.
-								The route validates whether a restaurant with the same name and zip code already exists before saving the new restaurant entry.
-							</p>
-							
-							<span class="image main"><img src="images/java_api/3. get_user.png" alt="Getting User Information" width="1200" height="300"/></span>
-							<p>
-								To retrieve user information based on a specific username, the <code>/users/by-username/{username}</code> endpoint is used.
-								This route returns user details, such as city and state, associated with the provided username.
-							</p>
-							
-							<span class="image main"><img src="images/java_api/4. post_review.png" alt="Posting a Review" width="1200" height="300"/></span>
-							<p>
-								Posting a dining review involves sending a <code>POST</code> request to the <code>/dining-reviews</code> endpoint.
-								The route verifies the existence of the user based on the username, then saves the review details to the repository.
-							</p>
-							
-							<span class="image main"><img src="images/java_api/5. get_pendingreviews.png" alt="Getting Pending Reviews" width="1200" height="300"/></span>
-							<p>
-								To retrieve a list of pending reviews, the <code>/admin/pending-reviews</code> endpoint is used. This route fetches
-								reviews with an "PENDING" approval status and returns them for administrative purposes.
-							</p>
-
-							<span class="image main"><img src="images/java_api/6. admin_getusers.png" alt="Admin - Getting Users" width="1200" height="300"/></span>
-							<p>
-								Administrators can access user information using the <code>/admin/users</code> endpoint. This route returns a list of
-								all registered users, allowing administrators to manage user profiles and information.
-							</p>
-							
-							<span class="image main"><img src="images/java_api/7. get_reviews.png" alt="Getting All Reviews" width="1200" height="300"/></span>
-							<p>
-								The <code>/admin/reviews</code> endpoint is used to retrieve all dining reviews in the system. This route provides
-								administrators with an overview of all reviews, including their details and approval status.
-							</p>
-							
-							<span class="image main"><img src="images/java_api/8. accept_review.png" alt="Accepting a Review" width="1200" height="300"/></span>
-							<p>
-								Review approval or rejection is facilitated through the <code>/admin/reviews/{id}</code> endpoint with a <code>PUT</code>
-								request. Administrators can specify the approval status ("ACCEPTED" or "REJECTED") to update the review accordingly.
-							</p>
-							</div> -->
+							</div>
 							
 					</section>
 
