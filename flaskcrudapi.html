@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Flask CRUD API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Eric Schmidt's Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="flaskcrudapi.html" class="active">Flask CRUD API + Docker</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Flask CRUD API + Docker</h1>
+							<h2>Overview</h2>
+							<p>	
+								This project implements a Flask-based CRUD API for managing patient data with flu symptoms. 
+								The API operations include creating, reading, updating, and deleting patient records. 
+								The application uses Docker for containerization, enabling easy deployment.
+								<a href="https://github.com/ericmidt/flask-crud-api">Here's the code on GitHub.</a>
+							</p>
+							<h2>Key Features</h2>
+								<h3>Local Database</h3>
+								<ul>
+								  <li>The program establishes a connection to a local PostgreSQL database.</li>
+								  <li>It creates a table named <code>dados_gripe</code> to store patient information, including timestamp, gender, age, symptoms, and vaccination status.</li>
+								</ul>
+
+								<h3>API Operations:</h3>
+								<ul>
+
+									<h4>List Patients:</h4>
+									<ul>
+									  <li>Endpoint: <code>/pacientes</code></li>
+									  <li>Method: GET</li>
+									  <li>Response:<br>Retrieves a list of all patients.</li>
+									</ul>
+
+
+									<h4>Create Patient:</h4>
+									<ul>
+									  <li>Endpoint: <code>/paciente</code></li>
+									  <li>Method: POST</li>
+									  <li>Request Body Format:<br>
+										<code>
+											{
+											"timestamp": "YYYY-MM-DD HH:MM:SS",
+											"sexo": "Gender",
+											"idade": 99,
+											"sintomas": "Symptoms",
+											"dataInicioSintomas": "YYYY-MM-DD HH:MM:SS",
+											"municipio": "City",
+											"estado": "State",
+											"tomouVacinaCovid": true
+											}
+										</code>
+									  </li>
+									  <li>Response:<br>200 OK - Patient created successfully.</li>
+									</ul>
+
+
+									<h4>Update Patient:</h4>
+									<ul>
+									  <li>Endpoint: <code>/paciente/{id}</code></li>
+									  <li>Method: PUT</li>
+									  <li>URL Parameters: id - Patient ID</li>
+									  <li>Request Body Format:<br>
+										<code>
+											{
+											"timestamp": "YYYY-MM-DD HH:MM:SS",
+											"sexo": "Gender",
+											"idade": 0,
+											"sintomas": "Symptoms",
+											"dataInicioSintomas": "YYYY-MM-DD HH:MM:SS",
+											"municipio": "City",
+											"estado": "State",
+											"tomouVacinaCovid": true
+											}
+										</code>
+									  </li>
+									  <li>Responses:<br>200 OK - Patient updated successfully.<br />404 Not Found - Patient with the specified ID not found.</li>
+									</ul>
+
+
+									<h4>Remove Patient:</h4>
+									<ul>
+									  <li>Endpoint: <code>/paciente/{id}</code></li>
+									  <li>Method: DELETE</li>
+									  <li>URL Parameters: id - Patient ID</li>
+									  <li>Responses: <br>200 OK - Patient removed successfully.<br/>404 Not Found - Patient with the specified ID not found.</li>
+									</ul>
+
+								</ul>
+								
+								<h3>Technologies Used</h3>
+								<ul>
+								  <li><strong>Flask:</strong> The lightweight Python web framework used for building the API.</li>
+								  <li><strong>PostgreSQL:</strong> The database management system for storing patient records.</li>
+								  <li><strong>Psycopg2:</strong> A PostgreSQL adapter for Python, facilitating database connections.</li>
+								  <li><strong>Docker:</strong> Enables containerization for easy deployment and management.</li>
+								</ul>
+
+								<p>
+									After following the steps required to connect with the container (available on the project's GitHub page), 
+									you should see the Flask server running on your terminal as the image below shows.
+								</p>
+								<span class="image fit"><img src="images/flask-crud-api1.png" alt="" /></span>
+								<p>
+									The API allows for the creation of multiple entries as shown below:
+								</p>
+								<span class="image fit"><img src="images/flask-crud-api2.png" alt="" /></span>
+								<p>
+									The Python script connects to a PostgreSQL database instance and inserts the data from the request into 
+									the table using parameterized queries, ensuring data integrity.
+								</p>
+								<span class="image fit"><img src="images/flask-crud-api3.png" alt="" /></span>
+								<p>
+									The API also allows for all the data in the table to be listed.
+								</p>
+								<span class="image fit"><img src="images/flask-crud-api4.png" alt="" /></span>
+								<p>
+									As well as the rest of the standard CRUD functions, such as update and delete. It also returns error messages 
+									if there's no such patient with the provided ID.
+								</p>
+								<span class="image fit"><img src="images/flask-crud-api5.png" alt="" /></span>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Eric Schmidt. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
