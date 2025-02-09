@@ -59,7 +59,7 @@
 							<p></p>
 					
 						      <h2>Solution Architecture</h2>
-						      <h3>Conceptual Model</h3>
+						      <h3>1. Conceptual Model</h3>
 						      <p>	
 							The core entities and relationships of the system included:
 							<li>Customers (1:N with Orders, 1:1 with Shopping Cart)</li>
@@ -68,8 +68,9 @@
    							<li>Order Items (N:1 with Orders, N:1 with Products)</li>
 						      	<li>Reviews (N:1 with Customers, N:1 with Products)</li>
 							</p>
-						      <h3>2. Logical Model & NoSQL Adaptation</h3>
-						      <p>	
+						       <p></p>
+						       <h3>2. Logical Model & NoSQL Adaptation</h3>
+						       <p>	
 							To optimize DynamoDB’s query performance, I applied denormalization, 
 							embedding frequently accessed data within related entities. 
 							Key decisions included:
@@ -78,42 +79,43 @@
 							<li>Embedding addresses in Customers and categories in Products to streamline lookups.</li>
 							<li>Separating Reviews into a dedicated table to prevent performance degradation for products with a high number of reviews.</li>
 
-              </p>
+                                                        </p>
 							<span class="image fit"><img src="images/ibm_project/hackolade_implementation.png" alt="" /></span>
+							<p></p>
 							<p>	
               
-              <h3>3. Partitioning & Sharding Strategy</h3>
-              <p>	
-                To ensure horizontal scalability, I implemented a strategic sharding approach:
+              						<h3>3. Partitioning & Sharding Strategy</h3>
+					                <p>	
+					                To ensure horizontal scalability, I implemented a strategic sharding approach:
 							</p>
 							<li>Customers: Partitioned by _id for uniform distribution.</li>
 							<li>Orders: Partitioned by _id to balance multiple orders per customer.</li>
 							<li>Products: Partitioned by _id to optimize product lookups.</li>
-              <li>Reviews: Used composite keys (_id_product as partition key, _id as sort key) to avoid hotspotting.</li>
-
-              <h3>4. High Availability & Scalability Measures</h3>
-              <p>	
-                To enhance system resilience and performance, I incorporated:
+             			 			<li>Reviews: Used composite keys (_id_product as partition key, _id as sort key) to avoid hotspotting.</li>
+							<p></p>
+					                <h3>4. High Availability & Scalability Measures</h3>
+					                <p>	
+					                To enhance system resilience and performance, I incorporated:
 							</p>
 							<li>Global Tables: Ensured multi-region availability with 99.999% uptime.</li>
 							<li>Auto Scaling: Adjusted read/write capacity based on traffic patterns.</li>
 							<li>Secondary Indexes: Designed additional indexes for high-traffic queries.</li>
-              <li>Caching: Integrated Redis to reduce database load for frequent reads.</li>
-
-              <h2>Implementation</h2>
-              <p>	
-                The database schema was implemented in a local DynamoDB instance using NoSQL Workbench. 
-                A Python script (Boto3) was developed to automate table creation and insert sample data. 
-                The complete codebase is available on GitHub: <a href="https://github.com/ericmidt/ecom-dynamo">GitHub Repository.</a>
+						        <li>Caching: Integrated Redis to reduce database load for frequent reads.</li>
+							<p></p>
+					                <h2>Implementation</h2>
+					                <p>	
+					                The database schema was implemented in a local DynamoDB instance using NoSQL Workbench. 
+					                A Python script (Boto3) was developed to automate table creation and insert sample data. 
+					                The complete codebase is available on GitHub: <a href="https://github.com/ericmidt/ecom-dynamo">GitHub Repository.</a>
 							</p>
-
-              <h2>Conclusion</h2>
-              <p>	
-                This project provided hands-on experience in designing a highly scalable, 
-                fault-tolerant NoSQL database for a real-world e-commerce application. 
-                The implementation of DynamoDB Global Tables, auto-scaling strategies, 
-                and efficient partitioning showcased advanced data engineering principles 
-                critical for building robust distributed systems.
+								
+					                <h2>Conclusion</h2>
+					                <p>	
+					                This project provided hands-on experience in designing a highly scalable, 
+					                fault-tolerant NoSQL database for a real-world e-commerce application. 
+					                The implementation of DynamoDB Global Tables, auto-scaling strategies, 
+					                and efficient partitioning showcased advanced data engineering principles 
+					                critical for building robust distributed systems.
 							</p>
               
 							</ul>
