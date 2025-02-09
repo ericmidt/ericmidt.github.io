@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Scalable NoSQL Database Design for E-Commerce</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Eric Schmidt's Portfolio</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="ibm_capstone_project.html" class="active">Scalable NoSQL Database Design for E-Commerce</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Scalable NoSQL Database Design for E-Commerce</h1>
+							<h2>Project Overview</h2>
+							<p>	
+  							As part of my postgraduate program in Data Architecture and Engineering, 
+                I developed a scalable NoSQL database solution for an e-commerce platform. 
+                This project applied advanced data modeling techniques to optimize read 
+                and write operations, ensuring high availability and efficient query 
+                performance using Amazon DynamoDB.
+							</p>
+
+              <h2>Project Context</h2>
+							<p>	
+                The project focused on designing and implementing a data architecture for Amazonas, 
+                a growing e-commerce platform that sells electronics, apparel, household items, and 
+                books. The system required a NoSQL database to handle user registrations, shopping 
+                carts, orders, payments, and product reviews while maintaining scalability and 
+                efficiency.
+							</p>
+
+							<h2>Key Technologies & Tools</h2>
+							<li>Database: Amazon DynamoDB</li>
+							<li>Data Modeling Tool: Hackolade</li>
+							<li>Development & Deployment: Python, Boto3, NoSQL Workbench</li>
+   						<li>Monitoring & Scaling: AWS CloudWatch, DynamoDB Auto Scaling</li>
+              <li>Performance Optimization: Data partitioning, caching with Redis</li>
+
+              <h2>Solution Architecture</h2>
+              <h3>Conceptual Model</h3>
+              <p>	
+                The core entities and relationships of the system included:
+							</p>
+							<li>Customers (1:N with Orders, 1:1 with Shopping Cart)</li>
+							<li>Products (1:N with Order Items, 1:N with Reviews)</li>
+							<li>Orders (N:1 with Customers, 1:N with Order Items, 1:1 with Payments)</li>
+   						<li>Order Items (N:1 with Orders, N:1 with Products)</li>
+              <li>Reviews (N:1 with Customers, N:1 with Products)</li>
+
+              <h3>2. Logical Model & NoSQL Adaptation</h3>
+              <p>	
+                To optimize DynamoDB’s query performance, I applied denormalization, 
+                embedding frequently accessed data within related entities. 
+                Key decisions included:
+							</p>
+							<li>Storing order items inside Orders and Shopping Cart to minimize JOIN-like queries.</li>
+							<li>Embedding addresses in Customers and categories in Products to streamline lookups.</li>
+							<li>Separating Reviews into a dedicated table to prevent performance degradation for products with a high number of reviews.</li>
+
+              </p>
+							<span class="image fit"><img src="images/ibm_project/hackolade_implementation.png" alt="" /></span>
+							<p>	
+              
+              <h3>3. Partitioning & Sharding Strategy</h3>
+              <p>	
+                To ensure horizontal scalability, I implemented a strategic sharding approach:
+							</p>
+							<li>Customers: Partitioned by _id for uniform distribution.</li>
+							<li>Orders: Partitioned by _id to balance multiple orders per customer.</li>
+							<li>Products: Partitioned by _id to optimize product lookups.</li>
+              <li>Reviews: Used composite keys (_id_product as partition key, _id as sort key) to avoid hotspotting.</li>
+
+              <h3>4. High Availability & Scalability Measures</h3>
+              <p>	
+                To enhance system resilience and performance, I incorporated:
+							</p>
+							<li>Global Tables: Ensured multi-region availability with 99.999% uptime.</li>
+							<li>Auto Scaling: Adjusted read/write capacity based on traffic patterns.</li>
+							<li>Secondary Indexes: Designed additional indexes for high-traffic queries.</li>
+              <li>Caching: Integrated Redis to reduce database load for frequent reads.</li>
+
+              <h2>Implementation</h2>
+              <p>	
+                The database schema was implemented in a local DynamoDB instance using NoSQL Workbench. 
+                A Python script (Boto3) was developed to automate table creation and insert sample data. 
+                The complete codebase is available on GitHub: <a href="https://github.com/ericmidt/ecom-dynamo">GitHub Repository.</a>
+							</p>
+
+              <h2>Conclusion</h2>
+              <p>	
+                This project provided hands-on experience in designing a highly scalable, 
+                fault-tolerant NoSQL database for a real-world e-commerce application. 
+                The implementation of DynamoDB Global Tables, auto-scaling strategies, 
+                and efficient partitioning showcased advanced data engineering principles 
+                critical for building robust distributed systems.
+							</p>
+              
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Eric Schmidt. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
