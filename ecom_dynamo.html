@@ -62,13 +62,12 @@
 						      <h3>Conceptual Model</h3>
 						      <p>	
 							The core entities and relationships of the system included:
-							</p>
 							<li>Customers (1:N with Orders, 1:1 with Shopping Cart)</li>
 							<li>Products (1:N with Order Items, 1:N with Reviews)</li>
 							<li>Orders (N:1 with Customers, 1:N with Order Items, 1:1 with Payments)</li>
    							<li>Order Items (N:1 with Orders, N:1 with Products)</li>
 						      	<li>Reviews (N:1 with Customers, N:1 with Products)</li>
-					
+							</p>
 						      <h3>2. Logical Model & NoSQL Adaptation</h3>
 						      <p>	
 							To optimize DynamoDB’s query performance, I applied denormalization, 
