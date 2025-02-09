@@ -35,44 +35,45 @@
 							<h2>Project Overview</h2>
 							<p>	
   							As part of my postgraduate program in Data Architecture and Engineering, 
-                I developed a scalable NoSQL database solution for an e-commerce platform. 
-                This project applied advanced data modeling techniques to optimize read 
-                and write operations, ensuring high availability and efficient query 
-                performance using Amazon DynamoDB.
+					                I developed a scalable NoSQL database solution for an e-commerce platform. 
+					                This project applied advanced data modeling techniques to optimize read 
+					                and write operations, ensuring high availability and efficient query 
+					                performance using Amazon DynamoDB.
 							</p>
 
-              <h2>Project Context</h2>
+					              <h2>Project Context</h2>
 							<p>	
-                The project focused on designing and implementing a data architecture for Amazonas, 
-                a growing e-commerce platform that sells electronics, apparel, household items, and 
-                books. The system required a NoSQL database to handle user registrations, shopping 
-                carts, orders, payments, and product reviews while maintaining scalability and 
-                efficiency.
+					                The project focused on designing and implementing a data architecture for Amazonas, 
+					                a growing e-commerce platform that sells electronics, apparel, household items, and 
+					                books. The system required a NoSQL database to handle user registrations, shopping 
+					                carts, orders, payments, and product reviews while maintaining scalability and 
+					                efficiency.
 							</p>
 
 							<h2>Key Technologies & Tools</h2>
 							<li>Database: Amazon DynamoDB</li>
 							<li>Data Modeling Tool: Hackolade</li>
 							<li>Development & Deployment: Python, Boto3, NoSQL Workbench</li>
-   						<li>Monitoring & Scaling: AWS CloudWatch, DynamoDB Auto Scaling</li>
-              <li>Performance Optimization: Data partitioning, caching with Redis</li>
-
-              <h2>Solution Architecture</h2>
-              <h3>Conceptual Model</h3>
-              <p>	
-                The core entities and relationships of the system included:
+   							<li>Monitoring & Scaling: AWS CloudWatch, DynamoDB Auto Scaling</li>
+						        <li>Performance Optimization: Data partitioning, caching with Redis</li>
+							<p></p>
+					
+						      <h2>Solution Architecture</h2>
+						      <h3>Conceptual Model</h3>
+						      <p>	
+							The core entities and relationships of the system included:
 							</p>
 							<li>Customers (1:N with Orders, 1:1 with Shopping Cart)</li>
 							<li>Products (1:N with Order Items, 1:N with Reviews)</li>
 							<li>Orders (N:1 with Customers, 1:N with Order Items, 1:1 with Payments)</li>
-   						<li>Order Items (N:1 with Orders, N:1 with Products)</li>
-              <li>Reviews (N:1 with Customers, N:1 with Products)</li>
-
-              <h3>2. Logical Model & NoSQL Adaptation</h3>
-              <p>	
-                To optimize DynamoDB’s query performance, I applied denormalization, 
-                embedding frequently accessed data within related entities. 
-                Key decisions included:
+   							<li>Order Items (N:1 with Orders, N:1 with Products)</li>
+						      	<li>Reviews (N:1 with Customers, N:1 with Products)</li>
+					
+						      <h3>2. Logical Model & NoSQL Adaptation</h3>
+						      <p>	
+							To optimize DynamoDB’s query performance, I applied denormalization, 
+							embedding frequently accessed data within related entities. 
+							Key decisions included:
 							</p>
 							<li>Storing order items inside Orders and Shopping Cart to minimize JOIN-like queries.</li>
 							<li>Embedding addresses in Customers and categories in Products to streamline lookups.</li>
