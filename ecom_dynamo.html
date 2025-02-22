@@ -89,12 +89,12 @@
 							<li>Products: Partitioned by _id to optimize product lookups.</li>
              			 			<li>Reviews: Used composite keys (_id_product as partition key, _id as sort key) to avoid hotspotting.</li>
 							<p></p>
-					                <h3>4. High Availability & Scalability Measures</h3>
-					                To enhance system resilience and performance, I incorporated:
-							<li>Global Tables: Ensured multi-region availability with 99.999% uptime.</li>
-							<li>Auto Scaling: Adjusted read/write capacity based on traffic patterns.</li>
-							<li>Secondary Indexes: Designed additional indexes for high-traffic queries.</li>
-						        <li>Caching: Integrated Redis to reduce database load for frequent reads.</li>
+					        <h3>4. High Availability & Scalability Measures</h3>
+					            To enhance system resilience and performance in the future, the following measures can be incorporated:
+								<li>Global Tables: Ensure multi-region availability with 99.999% uptime.</li>
+								<li>Auto Scaling: Adjust read/write capacity based on traffic patterns.</li>
+								<li>Secondary Indexes: Design additional indexes for high-traffic queries.</li>
+						        <li>Caching: Integrate Redis to reduce database load for frequent reads.</li>
 							<p></p>
 					                <h2>Implementation</h2>
 					                <p>	
