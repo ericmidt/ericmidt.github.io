@@ -71,16 +71,18 @@
 						       <p></p>
 						       <h3>2. Logical Model & NoSQL Adaptation</h3>
 						       <p>	
-							To optimize DynamoDB’s query performance, I applied denormalization, 
-							embedding frequently accessed data within related entities. 
-							Key decisions included:
+								To optimize DynamoDB’s query performance, 
+								I applied denormalization. This involved 
+								embedding frequently accessed data within 
+								related entities.
+							    Key decisions included:
 							</p>
 							<li>Storing order items inside Orders and Shopping Cart to minimize JOIN-like queries.</li>
 							<li>Embedding addresses in Customers and categories in Products to streamline lookups.</li>
 							<li>Separating Reviews into a dedicated table to prevent performance degradation for products with a high number of reviews.</li>
 
-                                                        </p>
-							<span class="image fit"><img src="images/ibm_project/hackolade_implementation.png" alt="" /></span>
+                            </p>
+							<span class="image fit"><img src="images/hackolade_implementation.png" alt="" /></span>
 							<p></p>
 							<p>	
               
